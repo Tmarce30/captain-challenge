@@ -31,6 +31,11 @@ class PersonnagesController < ApplicationController
     end
   end
 
+  def destroy
+    @personnage.destroy
+    redirect_to personnages_path
+  end
+
   private
 
   def personnage_params
