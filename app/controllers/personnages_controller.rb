@@ -1,5 +1,5 @@
 class PersonnagesController < ApplicationController
-  before_action :set_personnage, only: [:show, :edit, :update]
+  before_action :set_personnage, only: [:show, :edit, :update, :destroy]
   def index
     @personnages = Personnage.all
   end
