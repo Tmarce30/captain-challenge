@@ -14,7 +14,7 @@ class PersonnagesController < ApplicationController
   def create
     @personnage = Personnage.new(personnage_params)
     if @personnage.save
-      render personnage_path(@personnage)
+      redirect_to personnage_path(@personnage)
     else
       render :new
     end
