@@ -1,1 +1,12 @@
-
+<div class="container">
+  <div class="row form">
+    <div class="col-xs-4 col-sm-offset-4">
+      <%= simple_form_for(@personnage) do |f| %>
+        <%= f.input :nom %>
+        <%= f.input :points_vie %>
+        <%= f.input :points_attaque %>
+        <%= f.submit class: 'btn btn-primary'%>
+      <% end %>
+    </div>
+  </div>
+</div>
