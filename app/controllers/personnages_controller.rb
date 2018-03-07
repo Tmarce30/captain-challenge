@@ -8,7 +8,7 @@ class PersonnagesController < ApplicationController
   end
 
   def new
-    @cocktail = Personnage.new
+    @personnage = Personnage.new
   end
 
   def create
