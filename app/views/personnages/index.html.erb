@@ -7,9 +7,11 @@
   <div class="row">
     <% @personnages.each do |personnage| %>
       <div class="col-xs-12 col-sm-4">
-        <h3><%= personnage.nom %></h3>
-        <p>Points de vie : <%= personnage.points_vie %></p>
-        <p>Points d'attaque : <%= personnage.points_attaque %></p>
+        <%= link_to personnage_path(personnage) do %>
+          <h3><%= personnage.nom %></h3>
+          <p>Points de vie : <%= personnage.points_vie %></p>
+          <p>Points d'attaque : <%= personnage.points_attaque %></p>
+        <% end %>
       </div>
     <% end %>
   </div>
