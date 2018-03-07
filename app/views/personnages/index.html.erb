@@ -11,6 +11,7 @@
           <h3><%= personnage.nom %></h3>
           <p>Points de vie : <%= personnage.points_vie %></p>
           <p>Points d'attaque : <%= personnage.points_attaque %></p>
+          <%= link_to 'Edit', edit_personnage_path(personnage) %>
         <% end %>
       </div>
     <% end %>
