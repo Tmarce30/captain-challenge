@@ -1,7 +1,7 @@
 class Personnage < ApplicationRecord
   validates :nom, uniqueness: true, presence: true
-  validates :points_vie, uniqueness: true, presence: true
-  validates :points_attaque, uniqueness: true, presence: true
+  validates :points_vie, presence: true
+  validates :points_attaque, presence: true
 
   validate :sum_equals_100
 
