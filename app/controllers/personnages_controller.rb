@@ -1,5 +1,5 @@
 class PersonnagesController < ApplicationController
-  before_action :set_personnage, only: [:show]
+  before_action :set_personnage, only: [:show, :edit]
   def index
     @personnages = Personnage.all
   end
@@ -18,6 +18,9 @@ class PersonnagesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   private
