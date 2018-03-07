@@ -41,6 +41,10 @@ gem "font-awesome-sass"
 gem "simple_form"
 gem "autoprefixer-rails"
 
+# Image upload
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+
 gem 'figaro'
 
 group :development, :test do
