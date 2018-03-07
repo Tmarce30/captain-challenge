@@ -1,5 +1,16 @@
-<% @personnages.each do |personnage| %>
-  <%= personnage.nom %>
-  <%= personnage.points_vie %>
-  <%= personnage.points_attaque %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Personnages</h1>
+    </div>
+  </div>
+  <div class="row">
+    <% @personnages.each do |personnage| %>
+      <div class="col-xs-12 col-sm-4">
+        <h3><%= personnage.nom %></h3>
+        <p>Points de vie : <%= personnage.points_vie %></p>
+        <p>Points d'attaque : <%= personnage.points_attaque %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
