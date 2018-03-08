@@ -1,15 +1,20 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="text-center">
       <h1>Personnages</h1>
     </div>
   </div>
+  <%= link_to new_personnage_path do %>
+    <div class="list-inline">
+      <li>
+        <i class="fas fa-plus "></i>
+      </li>
+      <li>
+        <p>Créer un personnage</p>
+      </li>
+    </div>
+  <% end %>
   <div class="row">
     <%= render 'card' %>
-  </div>
-  <div class="row">
-    <div class="col-sm-3 col-sm-offset-8">
-      <%= link_to 'Créer un personnage', new_personnage_path, class: 'btn btn-primary' %>
-    </div>
   </div>
 </div>
