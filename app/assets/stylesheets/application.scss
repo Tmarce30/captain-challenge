@@ -13,3 +13,10 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+body {
+  background-image: linear-gradient(-225deg, rgba(20,20,20,0.1) 0%, rgba(30,30,30,0.3) 50%), image-url('background.png');
+  background-size: cover !important;
+  background-attachment: fixed;
+  background-position: center;
+}
