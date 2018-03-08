@@ -8,6 +8,7 @@
     <% @personnages.each do |personnage| %>
       <div class="col-xs-12 col-sm-4">
         <%= link_to personnage_path(personnage) do %>
+          <%= cl_image_tag personnage.photo, height: 300, width: 400, crop: :fit %>
           <h3><%= personnage.nom %></h3>
           <p>Points de vie : <%= personnage.points_vie %></p>
           <p>Points d'attaque : <%= personnage.points_attaque %></p>
