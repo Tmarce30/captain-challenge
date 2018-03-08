@@ -1,0 +1,22 @@
+<% @personnages.each do |personnage| %>
+  <div class="col-xs-12 col-sm-4">
+    <%= link_to personnage_path(personnage), class: "link" do %>
+      <div class="card">
+        <div class="card-image" style="background-image: url('<%= cl_image_path personnage.photo%>');"></div>
+        <div class="card-infos">
+          <h3><%= personnage.nom.capitalize %></h3>
+          <p>Points de vie : <%= personnage.points_vie %></p>
+          <div class="meter">
+            <div class="meter-bar green" style='width: <%= personnage.points_vie %>%;'></div>
+          </div>
+          <p>Points d'attaque : <%= personnage.points_attaque %></p>
+          <div class="meter">
+            <div class="meter-bar red" style='width: <%= personnage.points_attaque %>%;'></div>
+          </div>
+          <%= link_to 'Edit', edit_personnage_path(personnage) %>
+          <%= link_to 'Delete', personnage_path(personnage), method: :delete %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,59 @@
+.card{
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 5px 15px 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  & p {
+    color: white;
+  }
+  &:hover .card-image{
+    opacity: 0.9;
+  }
+}
+
+.card-image{
+  margin: 20px 5px;
+  height: 260px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  color: white;
+  position: relative;
+  background-color: white;
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.meter{
+  height: 20px;  /* Can be anything */
+  position: relative;
+  background: #555;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  padding: 3px 0px 1px 5px;
+  box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+  margin-bottom: 20px;
+}
+
+.meter-bar{
+  display: block;
+  height: 13px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #f42323;
+  box-shadow:
+    inset 0 2px 9px  rgba(255,255,255,0.3),
+    inset 0 -2px 6px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.meter-bar.green{
+  background-color: rgb(43,194,83);
+}
+
+
+
+
