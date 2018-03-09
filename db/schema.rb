@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309101213) do
+ActiveRecord::Schema.define(version: 20180309101523) do
 
   create_table "combats", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "joueurs", force: :cascade do |t|
+    t.integer  "personnage_id"
+    t.integer  "combat_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["combat_id"], name: "index_joueurs_on_combat_id"
+    t.index ["personnage_id"], name: "index_joueurs_on_personnage_id"
   end
 
   create_table "personnages", force: :cascade do |t|
