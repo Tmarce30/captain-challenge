@@ -1,5 +1,9 @@
 class CombatsController < ApplicationController
 
+  def show
+    @combat = Combat.find(params[:id])
+  end
+
   def new
     @combat = Combat.new
     2.times { @combat.joueurs.build}
@@ -7,13 +11,16 @@ class CombatsController < ApplicationController
 
   def create
     @combat = Combat.new(combat_params)
-    @combat.save
-    byebug
+    if @combat.save
+      redirect_to combat_path(@combat)
+    else
+      render :new
+    end
   end
 
   private
 
   def combat_params
-    params.require(:combat).permit(joueurs_attributes: [:combat_id, :personnage_id])
+    params.require(:combat).permit(joueurs_attributes: [:id, :personnage_id])
   end
 end

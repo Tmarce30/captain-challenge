@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :personnages
 
-  resources :combats, only: [:new, :create]
+  resources :combats, only: [:show, :new, :create]
 
   root to: 'pages#home'
 end
