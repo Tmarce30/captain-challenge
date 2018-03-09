@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 class='text-center'>Nouveau combat</h1>
+  <%= form_for @combat do |f| %>
+    <% number = 0 %>
+    <div class="row text-center">
+      <%= f.simple_fields_for :joueurs do |joueurs_form| %>
+        <% number += 1 %>
+        <h3>Joueur <%= number %></h3>
+        <%= joueurs_form.collection_select :personnage_id, Personnage.all, :id, :nom %>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="text-center">
+        <%= f.submit class: 'btn btn-primary'%>
+      </div>
+    </div>
+  <% end %>
+</div>
