@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180311143259) do
+ActiveRecord::Schema.define(version: 20180311143704) do
 
   create_table "combats", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20180311143259) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "photo"
-    t.integer  "agilité"
+    t.integer  "points_agilité"
   end
 
 end
