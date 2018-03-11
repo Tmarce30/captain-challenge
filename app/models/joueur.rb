@@ -4,7 +4,7 @@ class Joueur < ApplicationRecord
   belongs_to :bouclier
   belongs_to :arme
 
-  validate :personnage_id, presence: true
-  validate :bouclier_id, presence: true
-  validate :arme_id, presence: true
+  validates :personnage_id, presence: true
+  validates :bouclier_id, presence: true
+  validates :arme_id, presence: true
 end
