@@ -4,6 +4,10 @@ class CombatsController < ApplicationController
     @combat = Combat.find(params[:id])
   end
 
+  def index
+    @combats = Combat.all.last(10)
+  end
+
   def new
     @combat = Combat.new
     2.times { @combat.joueurs.build}

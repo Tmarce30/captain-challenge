@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <% @combats.each do |combat| %>
+      <div class="col-sm-6">
+        <% combat.joueurs.each do |joueur|%>
+          <h2><%= joueur.personnage.nom %></h2>
+          <h3><%= joueur.resultat %></h3>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
