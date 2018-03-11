@@ -13,15 +13,17 @@ personnages = [
   ]
 
 
-personnages.each do |p|
-  vie = (20..90).to_a.sample
-  attaque = 100 - vie
+personnages.each do |perso|
+  vie = (30..70).to_a.sample
+  attaque = (20..60).to_a.sample
+  agilité = 150 - (vie + attaque)
   new_personnage = Personnage.new(
-    nom:              p[:nom],
+    nom:              perso[:nom],
     points_vie:       vie,
     points_attaque:   attaque,
+    points_agilité:   agilité,
   )
-  new_personnage.remote_photo_url = p[:photo_url]
+  new_personnage.remote_photo_url = perso[:photo_url]
   new_personnage.save!
 end
 
