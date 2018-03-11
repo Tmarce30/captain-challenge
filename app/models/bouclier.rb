@@ -1,0 +1,2 @@
+class Bouclier < ApplicationRecord
+end
