@@ -27,4 +27,28 @@ personnages.each do |perso|
   new_personnage.save!
 end
 
+puts 'Creating armes'
+
+armes = %w(Poignard Revolver Chandelier Corde Matraque)
+
+armes.each do |arme|
+  puissance = (40..90).to_a.sample
+  Arme.create!(
+    nom:       arme,
+    puissance: puissance
+  )
+end
+
+puts 'Creating boucliers'
+
+boucliers = %w(Viking Hylia Fiscal Brennus Antimissile)
+
+boucliers.each do |bouclier|
+  protection = (40..90).to_a.sample
+  Bouclier.create!(
+    nom:        bouclier,
+    protection: protection
+  )
+end
+
 puts 'Finished'
