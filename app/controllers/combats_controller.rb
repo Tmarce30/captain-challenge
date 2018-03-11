@@ -32,9 +32,15 @@ class CombatsController < ApplicationController
     joueur_2_vie = joueurs[:joueur_2].personnage.points_vie
 
     while joueur_1_vie > 0
-      joueur_2_vie -= (joueurs[:joueur_1].personnage.points_attaque / 10)
+      unless esquive?(joueurs[:joueur_2].personnage.points_agilité)
+        joueur_2_vie -= (30 / 10)
+      end
+
       break if joueur_2_vie <= 0
-      joueur_1_vie -= (joueurs[:joueur_2].personnage.points_attaque / 10)
+
+      unless esquive?(joueurs[:joueur_1].personnage.points_agilité)
+        joueur_1_vie -= (30 / 10)
+      end
     end
 
     resultat(joueurs, joueur_1_vie, joueur_2_vie)
