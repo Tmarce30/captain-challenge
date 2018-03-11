@@ -1,3 +1,7 @@
-<% @combat.joueurs.each do |joueur| %>
-  <p><%= joueur.personnage.nom %></p>
-<% end %>
+<div class="container">
+  <h1>Resultat</h1>
+  <% @combat.joueurs.each do |joueur| %>
+    <h2><%= joueur.personnage.nom %></h2>
+    <h3><%= joueur.resultat %></h3>
+  <% end %>
+</div>
