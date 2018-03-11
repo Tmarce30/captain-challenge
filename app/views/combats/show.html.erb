@@ -1,7 +1,9 @@
 <div class="container">
   <h1>Resultat</h1>
   <% @combat.joueurs.each do |joueur| %>
-    <h2><%= joueur.personnage.nom %></h2>
+    <h2><%= joueur.personnage.nom.capitalize %></h2>
     <h3><%= joueur.resultat %></h3>
+    <h3>Coups donnés - <%= joueur.coups_donnés %></h3>
+    <h3>Coups esquivés - <%= joueur.coups_esquivés %></h3>
   <% end %>
 </div>
