@@ -36,6 +36,8 @@ class CombatsController < ApplicationController
       break if joueur_2_vie <= 0
       joueur_1_vie -= (joueurs[:joueur_2].personnage.points_attaque / 10)
     end
+
+    resultat(joueurs, joueur_1_vie, joueur_2_vie)
   end
 
   def ordre_attaque(combat)
@@ -43,5 +45,17 @@ class CombatsController < ApplicationController
     joueur_1 = joueurs.sample
     joueur_2 = joueurs.reject { |joueur| joueur == joueur_1 }
     return { joueur_1: joueur_1, joueur_2: joueur_2.first }
+  end
+
+  def resultat(joueurs, joueur_1_vie, joueur_2_vie)
+    if joueur_1_vie <= 0
+      joueurs[:joueur_1].resultat = 'Perdant'
+      joueurs[:joueur_2].resultat = 'Vainqueur'
+    elsif joueur_2_vie <= 0
+      joueurs[:joueur_1].resultat = 'Vainqueur'
+      joueurs[:joueur_2].resultat = 'Perdant'
+    end
+    joueurs[:joueur_1].save
+    joueurs[:joueur_2].save
   end
 end
