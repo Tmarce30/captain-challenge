@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180311225950) do
+ActiveRecord::Schema.define(version: 20180311230853) do
 
   create_table "armes", force: :cascade do |t|
     t.string   "nom"
@@ -39,6 +39,10 @@ ActiveRecord::Schema.define(version: 20180311225950) do
     t.string   "resultat"
     t.integer  "coups_donnés"
     t.integer  "coups_esquivés"
+    t.integer  "arme_id"
+    t.integer  "bouclier_id"
+    t.index ["arme_id"], name: "index_joueurs_on_arme_id"
+    t.index ["bouclier_id"], name: "index_joueurs_on_bouclier_id"
     t.index ["combat_id"], name: "index_joueurs_on_combat_id"
     t.index ["personnage_id"], name: "index_joueurs_on_personnage_id"
   end
