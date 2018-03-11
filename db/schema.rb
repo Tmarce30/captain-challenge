@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180311143704) do
+ActiveRecord::Schema.define(version: 20180311151906) do
 
   create_table "combats", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20180311143704) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "resultat"
+    t.integer  "coups_donnés"
     t.index ["combat_id"], name: "index_joueurs_on_combat_id"
     t.index ["personnage_id"], name: "index_joueurs_on_personnage_id"
   end
