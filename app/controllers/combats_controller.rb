@@ -58,4 +58,8 @@ class CombatsController < ApplicationController
     joueurs[:joueur_1].save
     joueurs[:joueur_2].save
   end
+
+  def esquive?(joueur_agilite)
+    rand <= joueur_agilite / 100.0
+  end
 end
