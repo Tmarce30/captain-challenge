@@ -5,8 +5,13 @@
     <div class="row text-center">
       <%= f.simple_fields_for :joueurs do |joueurs_form| %>
         <% number += 1 %>
-        <h3>Joueur <%= number %></h3>
+        <h2>Joueur <%= number %></h2>
+        <h3>Personnage</h3>
         <%= joueurs_form.collection_select :personnage_id, Personnage.all, :id, :nom %>
+        <h3>Arme</h3>
+        <%= joueurs_form.collection_select :arme_id, Arme.all, :id, :nom %>
+        <h3>Bouclier</h3>
+        <%= joueurs_form.collection_select :bouclier_id, Bouclier.all, :id, :nom %>
       <% end %>
     </div>
     <div class="row">
