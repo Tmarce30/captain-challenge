@@ -2,6 +2,13 @@
   <div class="row form">
     <div class="col-sm-4 col-sm-offset-4">
       <%= simple_form_for(@personnage) do |f| %>
+        <% if @personnage.errors.any? %>
+          <ul>
+            <% @personnage.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
         <%= f.input :nom %>
         <%= f.input :points_vie %>
         <%= f.input :points_attaque %>

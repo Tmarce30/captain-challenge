@@ -1,8 +1,15 @@
 <div class="container">
   <h1 class='text-center'>Nouveau combat</h1>
   <%= form_for @combat do |f| %>
-    <% number = 0 %>
+    <% if @combat.errors.any? %>
+      <ul>
+        <% @combat.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
     <div class="row text-center">
+      <% number = 0 %>
       <%= f.simple_fields_for :joueurs do |joueurs_form| %>
         <% number += 1 %>
         <h2>Joueur <%= number %></h2>
