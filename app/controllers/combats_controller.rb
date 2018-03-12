@@ -58,11 +58,10 @@ class CombatsController < ApplicationController
     else
       if joueur_qui_defend.bouclier.protection > 0
         joueur_qui_defend.bouclier.protection -= (puissance_joueur / 10)
-        joueur_qui_attaque.increment(:coups_donnés, by = 1)
       else
         joueur_qui_defend.personnage.points_vie -= (puissance_joueur / 10)
-        joueur_qui_attaque.increment(:coups_donnés, by = 1)
       end
+      joueur_qui_attaque.increment(:coups_donnés, by = 1)
     end
   end
 
