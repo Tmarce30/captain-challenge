@@ -6,6 +6,8 @@ class PersonnagesController < ApplicationController
   end
 
   def show
+    @combats = @personnage.combats
+    @taux_de_victoire = taux_de_victoire
   end
 
   def new
@@ -45,5 +47,18 @@ class PersonnagesController < ApplicationController
 
   def set_personnage
     @personnage = Personnage.find(params[:id])
+  end
+
+  def taux_de_victoire
+    joueurs = @combats.map { |combat| combat.joueurs }
+    resultats = []
+    joueurs.flatten.each do |joueur|
+      resultats << joueur if joueur.personnage_id == @personnage.id
+    end
+    victoires = []
+    resultats.each do |joueur|
+      victoires << joueur if joueur.resultat == 'Vainqueur'
+    end
+    return (victoires.length / resultats.length) * 100 unless resultats.length == 0
   end
 end
