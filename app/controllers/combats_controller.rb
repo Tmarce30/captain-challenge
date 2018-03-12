@@ -51,15 +51,16 @@ class CombatsController < ApplicationController
     end
   end
 
-  def coups(joueur_qui_attaque, joueur_qui_défend)
-    if esquive?(joueur_qui_défend.personnage.points_agilité)
-      joueur_qui_défend.increment(:coups_esquivés, by = 1)
+  def coups(joueur_qui_attaque, joueur_qui_defend)
+    puissance_joueur = joueur_qui_attaque.personnage.points_attaque + joueur_qui_attaque.arme.puissance
+    if esquive?(joueur_qui_defend.personnage.points_agilité)
+      joueur_qui_defend.increment(:coups_esquivés, by = 1)
     else
-      if joueur_qui_défend.bouclier.protection > 0
-        joueur_qui_défend.bouclier.protection -= (joueur_qui_attaque.personnage.points_attaque / 10)
+      if joueur_qui_defend.bouclier.protection > 0
+        joueur_qui_defend.bouclier.protection -= (puissance_joueur / 10)
         joueur_qui_attaque.increment(:coups_donnés, by = 1)
       else
-        joueur_qui_défend.personnage.points_vie -= (joueur_qui_attaque.personnage.points_attaque / 10)
+        joueur_qui_defend.personnage.points_vie -= (puissance_joueur / 10)
         joueur_qui_attaque.increment(:coups_donnés, by = 1)
       end
     end
