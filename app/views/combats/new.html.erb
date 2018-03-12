@@ -4,7 +4,7 @@
     <% if @combat.errors.any? %>
       <ul>
         <% @combat.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li class="error-message"><%= message %></li>
         <% end %>
       </ul>
     <% end %>
