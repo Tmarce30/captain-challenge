@@ -4,9 +4,9 @@ class Personnage < ApplicationRecord
   has_many :combats, through: :joueurs
 
   validates :nom, uniqueness: true, presence: true
-  validates :points_vie, presence: true
-  validates :points_attaque, presence: true
-  validates :points_agilite, presence: true
+  validates :points_vie, presence: true, inclusion: { in: 1..100 }
+  validates :points_attaque, presence: true, inclusion: { in: 1..100 }
+  validates :points_agilite, presence: true, inclusion: { in: 1..100 }
   validates :photo, presence: true
   mount_uploader :photo, PhotoUploader
 
