@@ -1,15 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
 
-
-.fas{
+.action-white{
   color: white;
   &:hover{
     text-decoration: none;
+    opacity: 0.8;
   }
-}
-
-
-.action-white:hover{
-  opacity: 0.8;
 }

@@ -4,16 +4,23 @@
       <h1>Personnages</h1>
     </div>
   </div>
-  <%= link_to new_personnage_path do %>
-    <div class="list-inline action-white">
-      <li>
-        <i class="fas fa-plus"></i>
-      </li>
-      <li>
-        <p>Créer un personnage</p>
-      </li>
+  <div class="row">
+    <div class="col-md-3">
+      <%= link_to new_personnage_path do %>
+        <div class="list-inline action-white">
+          <li>
+            <i class="fas fa-plus"></i>
+          </li>
+          <li>
+            <p>Créer un personnage</p>
+          </li>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+    <div class="col-md-3">
+      <%= link_to 'Historique de combats', combats_path, class: "action-white"%>
+    </div>
+  </div>
   <div class="row">
     <%= render 'card' %>
   </div>
