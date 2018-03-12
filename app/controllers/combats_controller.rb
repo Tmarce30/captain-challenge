@@ -26,7 +26,7 @@ class CombatsController < ApplicationController
   private
 
   def combat_params
-    params.require(:combat).permit(joueurs_attributes: [:id, :personnage_id])
+    params.require(:combat).permit(joueurs_attributes: [:id, :personnage_id, :arme_id, :bouclier_id])
   end
 
   def deroulement_combat
@@ -55,8 +55,13 @@ class CombatsController < ApplicationController
     if esquive?(joueur_qui_défend.personnage.points_agilité)
       joueur_qui_défend.increment(:coups_esquivés, by = 1)
     else
-      joueur_qui_défend.personnage.points_vie -= (joueur_qui_attaque.personnage.points_attaque / 10)
-      joueur_qui_attaque.increment(:coups_donnés, by = 1)
+      if joueur_qui_défend.bouclier.protection > 0
+        joueur_qui_défend.bouclier.protection -= (joueur_qui_attaque.personnage.points_attaque / 10)
+        joueur_qui_attaque.increment(:coups_donnés, by = 1)
+      else
+        joueur_qui_défend.personnage.points_vie -= (joueur_qui_attaque.personnage.points_attaque / 10)
+        joueur_qui_attaque.increment(:coups_donnés, by = 1)
+      end
     end
   end
 
