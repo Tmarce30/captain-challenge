@@ -13,9 +13,9 @@
           <div class="meter">
             <div class="meter-bar red" style='width: <%= personnage.points_attaque %>%;'></div>
           </div>
-          <p>Agilité - <%= personnage.points_agilité %> pts</p>
+          <p>Agilité - <%= personnage.points_agilite %> pts</p>
           <div class="meter">
-            <div class="meter-bar blue" style='width: <%= personnage.points_agilité %>%;'></div>
+            <div class="meter-bar blue" style='width: <%= personnage.points_agilite %>%;'></div>
           </div>
           <%= link_to 'Edit', edit_personnage_path(personnage) %>
           <%= link_to 'Delete', personnage_path(personnage), method: :delete %>

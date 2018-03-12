@@ -53,7 +53,7 @@ class CombatsController < ApplicationController
 
   def coups(joueur_qui_attaque, joueur_qui_defend)
     puissance_joueur = joueur_qui_attaque.personnage.points_attaque + joueur_qui_attaque.arme.puissance
-    if esquive?(joueur_qui_defend.personnage.points_agilité)
+    if esquive?(joueur_qui_defend.personnage.points_agilite)
       joueur_qui_defend.increment(:coups_esquivés, by = 1)
     else
       if joueur_qui_defend.bouclier.protection > 0

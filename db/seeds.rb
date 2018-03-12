@@ -21,7 +21,7 @@ personnages.each do |perso|
     nom:              perso[:nom],
     points_vie:       vie,
     points_attaque:   attaque,
-    points_agilité:   agilité,
+    points_agilite:   agilité,
   )
   new_personnage.remote_photo_url = perso[:photo_url]
   new_personnage.save!
