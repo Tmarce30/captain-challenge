@@ -40,7 +40,7 @@ class PersonnagesController < ApplicationController
   private
 
   def personnage_params
-    params.require(:personnage).permit(:nom, :points_vie, :points_attaque, :photo)
+    params.require(:personnage).permit(:nom, :points_vie, :points_attaque, :points_agilite, :photo)
   end
 
   def set_personnage
