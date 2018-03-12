@@ -7,14 +7,16 @@ class Personnage < ApplicationRecord
   validates :points_vie, presence: true
   validates :points_attaque, presence: true
   validates :points_agilite, presence: true
+  validates :photo, presence: true
   mount_uploader :photo, PhotoUploader
 
   validate :sum_equals_150
 
   def sum_equals_150
-    byebug
+    unless [points_vie, points_attaque, points_agilite].any? { |e| e.nil? }
      if points_vie + points_attaque + points_agilite != 150
        errors.add(:base, 'La somme des points de caractéristique doit être égale à 150')
      end
+    end
   end
 end
