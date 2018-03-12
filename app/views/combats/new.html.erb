@@ -13,12 +13,18 @@
       <%= f.simple_fields_for :joueurs do |joueurs_form| %>
         <% number += 1 %>
         <h2>Joueur <%= number %></h2>
-        <p>Personnage</p>
-        <%= joueurs_form.collection_select :personnage_id, Personnage.all, :id, :nom %>
-        <p>Arme</p>
-        <%= joueurs_form.collection_select :arme_id, Arme.all, :id, :nom %>
-        <p>Bouclier</p>
-        <%= joueurs_form.collection_select :bouclier_id, Bouclier.all, :id, :nom %>
+        <div class="field">
+          <p>Personnage</p>
+          <%= joueurs_form.collection_select :personnage_id, Personnage.all, :id, :nom %>
+        </div>
+        <div class="field">
+          <p>Arme</p>
+          <%= joueurs_form.collection_select :arme_id, Arme.all, :id, :nom %>
+        </div>
+        <div class="field">
+          <p>Bouclier</p>
+          <%= joueurs_form.collection_select :bouclier_id, Bouclier.all, :id, :nom %>
+        </div>
       <% end %>
     </div>
     <div class="row">

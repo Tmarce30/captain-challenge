@@ -1,9 +1,16 @@
 .form{
   margin-top: 30px;
+  & label, p {
+    color: white !important;
+  }
 }
 
 .error-message{
   color: white;
+}
+
+.field{
+  margin-top: 15px;
 }
 
 form{
@@ -11,7 +18,4 @@ form{
   padding: 5px 20px 10px 20px;
 }
 
-form, label, p {
-    color: white !important;
-}
 
