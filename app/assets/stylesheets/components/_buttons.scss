@@ -10,3 +10,17 @@
     opacity: 0.9;
   }
 }
+
+.big-red-button{
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: red;
+  padding: 7px 12px;
+  border-radius: 4px;
+  &:hover{
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+  }
+}
