@@ -1,9 +1,31 @@
 <div class="container">
+  <h1 class='text-center'><%= @personnage.nom.capitalize %></h1>
   <div class="row">
-    <h1><%= @personnage.nom %></h1>
-    <p>Points de vie : <%= @personnage.points_vie %></p>
-    <p>Points d'attaque : <%= @personnage.points_attaque %></p>
-    <%= link_to 'Edit', edit_personnage_path(@personnage) %>
-    <%= link_to 'Delete', personnage_path(@personnage), method: :delete %>
+    <div class="col-xs-12 col-sm-4 col-md-offset-4">
+      <%= link_to personnage_path(@personnage), class: "link" do %>
+        <div class="card">
+          <div class="card-image" style="background-image: url('<%= cl_image_path @personnage.photo%>');"></div>
+          <div class="card-infos">
+            <p>Vie - <%= @personnage.points_vie %> pts</p>
+            <div class="meter">
+              <div class="meter-bar green" style='width: <%= @personnage.points_vie %>%;'></div>
+            </div>
+            <p>Attaque - <%= @personnage.points_attaque %> pts</p>
+            <div class="meter">
+              <div class="meter-bar red" style='width: <%= @personnage.points_attaque %>%;'></div>
+            </div>
+            <p>Agilité - <%= @personnage.points_agilite %> pts</p>
+            <div class="meter">
+              <div class="meter-bar blue" style='width: <%= @personnage.points_agilite %>%;'></div>
+            </div>
+            <%= link_to 'Edit', edit_personnage_path(@personnage), class: 'link edit-link' %>
+            <%= link_to 'Delete', personnage_path(@personnage), method: :delete, class: 'link delete-link' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="text-center">
+    <%= link_to "Let's fight !", new_combat_path, class: 'big-red-button'%>
   </div>
 </div>

@@ -30,6 +30,14 @@ h1{
   font-family: 'Press Start 2P', cursive;
 }
 
+.edit-link, .delete-link{
+  color: white;
+}
+
+.delete-link{
+  margin-left: 15px;
+}
+
 .link:hover{
   text-decoration: none;
 }
